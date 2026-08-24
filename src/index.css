@@ -1,0 +1,210 @@
+:root {
+  /* Exact Colors from Provided Design System */
+  --navy-institutional: #17243A;
+  --champagne-gold: #E1C98A;
+  --primary-gold: #c8a04a;
+  --gold-accent: #795902;
+  --ivory-white: #FAFAF7;
+  --pure-white: #FFFFFF;
+  --soft-graphite: #4A4D50;
+  --surface-low: #FBF2E8;
+  --surface-subtle: #F5EDE2;
+  --hairline: rgba(225, 201, 138, 0.25);
+  
+  --saffron: #E87917;
+  --deep-green: #17643A;
+
+  /* Fonts */
+  --font-hero-title: 'Playfair Display', serif;
+  --font-section-title: 'Playfair Display', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-tamil: 'Noto Sans Tamil', sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', sans-serif;
+
+  /* Spacing & Borders */
+  --radius-card: 16px;
+  --radius-button: 8px;
+  --shadow-sm: 0 4px 20px rgba(23, 36, 58, 0.05);
+  --shadow-hover: 0 12px 32px rgba(23, 36, 58, 0.12);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--ivory-white);
+  color: var(--soft-graphite);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-hero-title, .font-section-title {
+  font-family: var(--font-hero-title);
+  color: var(--navy-institutional);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(225, 201, 138, 0.3);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 90px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px auto;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--navy-institutional);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+  .section-title {
+    font-size: 3.25rem;
+  }
+}
+
+.gold-divider {
+  width: 64px;
+  height: 3px;
+  background-color: var(--champagne-gold);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Button Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-button);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--navy-institutional);
+  color: var(--ivory-white);
+}
+
+.btn-primary:hover {
+  background-color: #0f1929;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(23, 36, 58, 0.2);
+}
+
+.btn-saffron {
+  background-color: var(--primary-gold);
+  color: var(--pure-white);
+}
+
+.btn-saffron:hover {
+  background-color: var(--gold-accent);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background-color: var(--pure-white);
+  border: 1px solid var(--champagne-gold);
+  color: var(--navy-institutional);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--navy-institutional);
+  color: var(--ivory-white);
+  border-color: var(--navy-institutional);
+}
+
+/* Card Styling */
+.card-glass {
+  background: var(--pure-white);
+  border: 1px solid rgba(225, 201, 138, 0.25);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card-glass:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--champagne-gold);
+}
+
+.card-dark {
+  background-color: var(--navy-institutional);
+  color: var(--ivory-white);
+  border-radius: var(--radius-card);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ivory-white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--champagne-gold);
+  border-radius: 4px;
+}
