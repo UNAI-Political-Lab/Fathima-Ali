@@ -31,21 +31,19 @@ export default function QuoteCarousel() {
   const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + quotes.length) % quotes.length);
 
   return (
-    <div style={{ backgroundColor: 'var(--bg-subtle)', color: 'var(--ink)', padding: '75px 0', position: 'relative', borderTop: '1px solid var(--hairline)', borderBottom: '1px solid var(--hairline)' }}>
-      <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: '850px' }}>
+    <div style={{ color: 'var(--ivory-white)', position: 'relative' }}>
+      <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto' }}>
         
-        <Quote size={40} style={{ color: 'var(--deep-green)', opacity: 0.8, marginBottom: '16px' }} />
-
-        <div style={{ minHeight: '120px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-quote)', fontSize: '1.5rem', lineHeight: 1.5, color: 'var(--ink)', marginBottom: '14px', fontWeight: 600 }}>
+        <div style={{ minHeight: '110px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-hero-title)', fontSize: 'clamp(1.2rem, 3vw, 1.8rem)', lineHeight: 1.4, color: 'var(--ivory-white)', marginBottom: '14px', fontWeight: 600 }}>
             "{quotes[currentIndex].text}"
           </p>
           {quotes[currentIndex].textTa && (
-            <p style={{ fontFamily: 'var(--font-tamil)', fontSize: '1.05rem', color: 'var(--deep-green)', marginBottom: '10px' }}>
+            <p style={{ fontFamily: 'var(--font-tamil)', fontSize: '1.05rem', color: 'var(--champagne-gold)', marginBottom: '10px' }}>
               "{quotes[currentIndex].textTa}"
             </p>
           )}
-          <span style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--slate-muted)', fontWeight: 700 }}>
+          <span style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--champagne-gold)', fontWeight: 700 }}>
             — Mrs. Fathima Ali · {quotes[currentIndex].context}
           </span>
         </div>
@@ -54,7 +52,8 @@ export default function QuoteCarousel() {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '24px' }}>
           <button 
             onClick={handlePrev} 
-            style={{ background: 'var(--white)', border: '1px solid var(--hairline-dark)', color: 'var(--ink)', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+            aria-label="Previous Quote"
+            style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(225, 201, 138, 0.3)', color: 'var(--champagne-gold)', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
           >
             <ChevronLeft size={18} />
           </button>
@@ -64,11 +63,12 @@ export default function QuoteCarousel() {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to quote ${idx + 1}`}
                 style={{
                   width: idx === currentIndex ? '24px' : '8px',
                   height: '8px',
                   borderRadius: '4px',
-                  backgroundColor: idx === currentIndex ? 'var(--deep-green)' : '#CBD5E1',
+                  backgroundColor: idx === currentIndex ? 'var(--champagne-gold)' : 'rgba(255, 255, 255, 0.3)',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.3s'
@@ -78,8 +78,9 @@ export default function QuoteCarousel() {
           </div>
 
           <button 
-            onClick={handleNext} 
-            style={{ background: 'var(--white)', border: '1px solid var(--hairline-dark)', color: 'var(--ink)', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+            onClick={handleNext}
+            aria-label="Next Quote" 
+            style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(225, 201, 138, 0.3)', color: 'var(--champagne-gold)', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
           >
             <ChevronRight size={18} />
           </button>
