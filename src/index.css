@@ -26,7 +26,11 @@
   --radius-card: 16px;
   --radius-button: 8px;
   --shadow-sm: 0 4px 20px rgba(23, 36, 58, 0.05);
-  --shadow-hover: 0 12px 32px rgba(23, 36, 58, 0.12);
+  --shadow-hover: 0 16px 36px rgba(23, 36, 58, 0.12);
+  
+  /* Easing curves */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 *, *::before, *::after {
@@ -46,6 +50,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, .font-hero-title, .font-section-title {
@@ -57,14 +62,16 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
 
 /* Glassmorphism Navigation */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(225, 201, 138, 0.3);
+  border: 1px solid rgba(225, 201, 138, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s var(--ease-editorial);
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -98,7 +105,7 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary-gold);
   margin-bottom: 12px;
   display: block;
@@ -123,6 +130,42 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   background-color: var(--champagne-gold);
   margin: 0 auto;
   border-radius: 2px;
+  transition: width 0.3s var(--ease-editorial);
+}
+
+/* Hover Lift & Elevation Classes */
+.hover-lift {
+  transition: transform 0.35s var(--ease-editorial), box-shadow 0.35s var(--ease-editorial), border-color 0.35s var(--ease-editorial);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--champagne-gold) !important;
+}
+
+.hover-scale {
+  transition: transform 0.4s var(--ease-editorial);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Magnetic Arrow Hover Effect */
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s var(--ease-editorial);
+}
+
+.magnetic-btn .arrow-icon {
+  transition: transform 0.3s var(--ease-editorial);
+}
+
+.magnetic-btn:hover .arrow-icon {
+  transform: translateX(6px);
 }
 
 /* Button Classes */
@@ -140,29 +183,33 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   border-radius: var(--radius-button);
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s var(--ease-editorial);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
   background-color: var(--navy-institutional);
   color: var(--ivory-white);
+  box-shadow: 0 4px 14px rgba(23, 36, 58, 0.15);
 }
 
 .btn-primary:hover {
   background-color: #0f1929;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(23, 36, 58, 0.2);
+  box-shadow: 0 8px 24px rgba(23, 36, 58, 0.25);
 }
 
 .btn-saffron {
-  background-color: var(--primary-gold);
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
   color: var(--pure-white);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.25);
 }
 
 .btn-saffron:hover {
-  background-color: var(--gold-accent);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.35);
 }
 
 .btn-outline-gold {
@@ -175,6 +222,7 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   background-color: var(--navy-institutional);
   color: var(--ivory-white);
   border-color: var(--navy-institutional);
+  transform: translateY(-2px);
 }
 
 /* Card Styling */
@@ -183,7 +231,7 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   border: 1px solid rgba(225, 201, 138, 0.25);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  transition: all 0.35s var(--ease-editorial);
 }
 
 .card-glass:hover {
@@ -195,6 +243,35 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   background-color: var(--navy-institutional);
   color: var(--ivory-white);
   border-radius: var(--radius-card);
+  box-shadow: 0 10px 30px rgba(23, 36, 58, 0.15);
+}
+
+/* Keyframes Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 201, 138, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(225, 201, 138, 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s var(--ease-editorial) forwards;
 }
 
 /* Custom Scrollbar */
