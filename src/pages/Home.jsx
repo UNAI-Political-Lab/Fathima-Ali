@@ -21,7 +21,7 @@ export default function Home({ currentLang, setActiveTab, onOpenPdf }) {
           alignItems: 'center',
           paddingTop: '110px',
           paddingBottom: '60px',
-          backgroundImage: 'linear-gradient(to right, #FAFAF7 0%, rgba(250, 250, 247, 0.88) 55%, transparent 100%), url(/hero_full.png)',
+          backgroundImage: 'linear-gradient(to right, #FAFAF7 0%, rgba(250, 250, 247, 0.75) 45%, transparent 85%), url(/hero_full.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           overflow: 'hidden'

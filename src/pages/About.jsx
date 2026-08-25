@@ -43,7 +43,7 @@ export default function About({ currentLang, setActiveTab, onOpenPdf }) {
           alignItems: 'center', 
           paddingTop: '120px', 
           paddingBottom: '70px',
-          backgroundImage: 'linear-gradient(to right, #FAFAF7 0%, rgba(250, 250, 247, 0.92) 50%, rgba(250, 250, 247, 0.45) 75%, transparent 100%), url(/about_hero.png)',
+          backgroundImage: 'linear-gradient(to right, #FAFAF7 0%, rgba(250, 250, 247, 0.82) 42%, transparent 85%), url(/about_hero.png)',
           backgroundSize: 'contain',
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
@@ -93,8 +93,7 @@ export default function About({ currentLang, setActiveTab, onOpenPdf }) {
                 marginBottom: '36px', 
                 borderLeft: '3px solid var(--champagne-gold)', 
                 paddingLeft: '20px',
-                backgroundColor: 'rgba(250, 250, 247, 0.65)',
-                backdropFilter: 'blur(4px)',
+                backgroundColor: 'rgba(250, 250, 247, 0.75)',
                 borderRadius: '0 8px 8px 0',
                 paddingTop: '6px',
                 paddingBottom: '6px'
