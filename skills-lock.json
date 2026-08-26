@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "antigravity-design-expert": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/antigravity-design-expert/SKILL.md",
+      "computedHash": "bdc93dd464491aa9bd3618d91295450bfe6d439050d08d3b760232b2b4d15a4f"
+    },
+    "design-taste-frontend": {
+      "source": "bnd-1/taste-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "89fb0ffc370300f65add6ccced60d8e59f45fe072bfa7f2a53b40a03a1366a12"
+    }
+  }
+}

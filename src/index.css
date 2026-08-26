@@ -1,5 +1,5 @@
 :root {
-  /* Exact Colors from Provided Design System */
+  /* Exact Colors from Design System Calibration */
   --navy-institutional: #17243A;
   --champagne-gold: #E1C98A;
   --primary-gold: #c8a04a;
@@ -22,11 +22,12 @@
   --font-tamil: 'Noto Sans Tamil', sans-serif;
   --font-hindi: 'Noto Sans Devanagari', sans-serif;
 
-  /* Spacing & Borders */
+  /* Spacing & Radii */
   --radius-card: 16px;
   --radius-button: 8px;
   --shadow-sm: 0 4px 20px rgba(23, 36, 58, 0.05);
   --shadow-hover: 0 16px 36px rgba(23, 36, 58, 0.12);
+  --shadow-diffusion: 0 20px 40px -15px rgba(23, 36, 58, 0.08);
   
   /* Easing curves */
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
@@ -60,20 +61,22 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   line-height: 1.15;
 }
 
-/* Glassmorphism Navigation */
+/* Liquid Glass Refraction Panels */
 .glass-nav {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(225, 201, 138, 0.35);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s var(--ease-editorial);
+  transition: all 0.35s var(--ease-editorial);
 }
 
 .glass-panel {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(225, 201, 138, 0.3);
+  box-shadow: var(--shadow-diffusion);
 }
 
 /* Layout Utilities */
@@ -133,9 +136,10 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   transition: width 0.3s var(--ease-editorial);
 }
 
-/* Hover Lift & Elevation Classes */
+/* Hover Elevation & Magnetic Micro-Interactions */
 .hover-lift {
   transition: transform 0.35s var(--ease-editorial), box-shadow 0.35s var(--ease-editorial), border-color 0.35s var(--ease-editorial);
+  will-change: transform;
 }
 
 .hover-lift:hover {
@@ -146,13 +150,13 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
 
 .hover-scale {
   transition: transform 0.4s var(--ease-editorial);
+  will-change: transform;
 }
 
 .hover-scale:hover {
   transform: scale(1.03);
 }
 
-/* Magnetic Arrow Hover Effect */
 .magnetic-btn {
   display: inline-flex;
   align-items: center;
@@ -187,6 +191,7 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -225,10 +230,10 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   transform: translateY(-2px);
 }
 
-/* Card Styling */
+/* Card Containers */
 .card-glass {
   background: var(--pure-white);
-  border: 1px solid rgba(225, 201, 138, 0.25);
+  border: 1px solid rgba(225, 201, 138, 0.28);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
   transition: all 0.35s var(--ease-editorial);
@@ -246,7 +251,7 @@ h1, h2, h3, h4, .font-hero-title, .font-section-title {
   box-shadow: 0 10px 30px rgba(23, 36, 58, 0.15);
 }
 
-/* Keyframes Animations */
+/* Keyframe Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
