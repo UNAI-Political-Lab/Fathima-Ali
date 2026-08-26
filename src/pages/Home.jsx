@@ -123,27 +123,27 @@ export default function Home({ currentLang, setActiveTab, onOpenPdf }) {
             {/* 3 Stat Badges */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px', paddingTop: '20px', borderTop: '1px solid rgba(225, 201, 138, 0.3)' }}>
               
-              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => setActiveTab('work')}>
-                <Users size={32} style={{ color: 'var(--champagne-gold)' }} />
+              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', whiteSpace: 'nowrap' }} onClick={() => setActiveTab('work')}>
+                <Users size={28} style={{ color: 'var(--champagne-gold)', flexShrink: 0 }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>PEOPLE</span>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>FIRST</span>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>PEOPLE</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>FIRST</span>
                 </div>
               </div>
 
-              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => setActiveTab('work')}>
-                <Scale size={32} style={{ color: 'var(--champagne-gold)' }} />
+              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', whiteSpace: 'nowrap' }} onClick={() => setActiveTab('work')}>
+                <Scale size={28} style={{ color: 'var(--champagne-gold)', flexShrink: 0 }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>SOCIAL</span>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>JUSTICE</span>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>SOCIAL</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>JUSTICE</span>
                 </div>
               </div>
 
-              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => setActiveTab('namo')}>
-                <Sprout size={32} style={{ color: 'var(--champagne-gold)' }} />
+              <div className="hover-scale" style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', whiteSpace: 'nowrap' }} onClick={() => setActiveTab('namo')}>
+                <Sprout size={28} style={{ color: 'var(--champagne-gold)', flexShrink: 0 }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>SUSTAINABLE</span>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>FUTURE</span>
+                  <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--navy-institutional)', letterSpacing: '0.06em' }}>SUSTAINABLE</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--soft-graphite)', letterSpacing: '0.12em' }}>FUTURE</span>
                 </div>
               </div>
 
